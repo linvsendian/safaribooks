@@ -48,7 +48,12 @@ $ python3 safaribooks.py --cred "account_mail@mail.com:password01" XXXXXXXXXXXXX
 The ID is the digits that you find in the URL of the book description page:  
 `https://www.safaribooksonline.com/library/view/book-name/XXXXXXXXXXXXX/`  
 Like: `https://www.safaribooksonline.com/library/view/test-driven-development-with/9781491958698/`  
-  
+
+### Cookie mode
+- F12 and put into console `javascript:(function(){var output = {};document.cookie.split(/\s*;\s*/).forEach(function(pair) {pair = pair.split(/\s*=\s*/);output[pair[0]]=pair.splice(1).join('=');});console.log(JSON.stringify(output));})();`
+- Copy the result and create a file name it `cookies.json`
+- python3 safaribooks.py XXXXXXXXXXXXX
+
 #### Program options:
 ```shell
 $ python3 safaribooks.py --help
